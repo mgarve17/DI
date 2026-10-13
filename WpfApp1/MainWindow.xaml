@@ -1,0 +1,79 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Ficha de alumno" Height="500" Width="900" Foreground="Snow"
+        FontFamily="Verdana">
+
+    <Window.Resources>
+        <ImageBrush x:Key="WindowBackgroundImage" ImageSource="C:\Users\di262\Desktop\wallpaper2you_290665.jpg" />
+    </Window.Resources>
+    <Window.Background>
+        <StaticResource ResourceKey="WindowBackgroundImage" />
+    </Window.Background>
+
+    <!--//añadir varios elementos en bloque en una sola direccion-->
+    <StackPanel Margin="20" >
+        <StackPanel Margin="250,10,250,10" Background="Navy" Opacity="50">
+            <!--textblock normalmente solo para titulos, no editable -->
+            <TextBlock Text="Ficha del alumno"
+                FontSize="24"
+                FontWeight="Bold"
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                />
+            <!--Label se usa para mostrar texto en cosas como formularios-->
+            <Label Content="Nombre: " Foreground="Snow" HorizontalAlignment="Center" FontFamily="Verdana"/>
+            <!--Cuadro de texto para escribir, editable-->
+            <TextBox x:Name="txtName" Width="300" HorizontalAlignment="Center"/>
+
+            <Label Content="Apellidos: " Foreground="Snow" HorizontalAlignment="Center" FontFamily="Verdana"/>
+            <TextBox x:Name="txtApellidos" Width="300" HorizontalAlignment="Center"/>
+
+            <Label Content="Fecha de nacimiento: " Foreground="Snow" HorizontalAlignment="Center" FontFamily="Verdana"/>
+            <!--Despliega un calendario, seleccionando un formato de fecha largo. pueden filtrarse fechas para no permitir su seleccion-->
+            <DatePicker x:Name="dpFecha" SelectedDateFormat="Long" Width="300" HorizontalAlignment="Center"/>
+
+            <Label Content="Curso: " Foreground="Snow" HorizontalAlignment="Center" FontFamily="Verdana"/>
+            <ComboBox x:Name="cmbCurso" IsEditable="True" Width="300" HorizontalAlignment="Center">
+                <ComboBoxItem Content="DAM1"/>
+                <ComboBoxItem Content="DAW1"/>
+                <ComboBoxItem Content="DAM2"/>
+                <ComboBoxItem Content="DAW2"/>
+            </ComboBox>
+
+            <!--Contenedor para agrupar-->
+            <GroupBox Header="Modalidad" Margin="0,15,0,0" Width="300" HorizontalAlignment="Center" FontFamily="Verdana">
+
+                <StackPanel>
+                    <RadioButton Content="Presencial"
+                          GroupName="Modalidad"
+                          IsChecked="True"
+                          Foreground="Snow"/>
+
+                    <RadioButton Content="Distancia"
+          GroupName="Modalidad"
+          IsChecked="True"
+                          Foreground="Snow"/>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Preferencias"  Margin="0,15,0,10" Width="300" HorizontalAlignment="Center" FontFamily="Verdana">
+                <StackPanel>
+                    <CheckBox Content="Recibir avisos" Foreground="Snow"/>
+                    <CheckBox Content="Recibir recordatorios" Foreground="Snow"/>
+
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <Button Content="Guardar"
+                Width="100"
+                Height="30"
+                Margin="0,20,20,0"
+                ToolTip="Guardar los datos de los alumnos"
+                HorizontalAlignment="Right"/>
+    </StackPanel>
+</Window>
