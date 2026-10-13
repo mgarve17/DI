@@ -1,0 +1,46 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ColorPrincipal" Color="#3c5b73"/>
+    <SolidColorBrush x:Key="ColorPrincipalOscuro" Color="#293f54"/>
+    <SolidColorBrush x:Key="ColorFondo" Color="#F5f7f9"/>
+    <SolidColorBrush x:Key="ColoBorde" Color="#b8c4cc"/>
+
+    <Style TargetType="Button">
+
+        <Setter Property="MinWidth" Value="105"/>
+        <Setter Property="Height" Value="36"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="12"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1"/>
+
+
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="MinWidth" Value="180"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="12"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="{StaticResource ColorFondo}"/>
+        <Setter Property="Foreground" Value="{StaticResource ColorPrincipalOscuro}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ColoBorde}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="tituloPrincipal">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource ColorPrincipalOscuro}"/>
+        <Setter Property="Margin" Value="0,0,0,20"/>
+    </Style>
+
+</ResourceDictionary>
