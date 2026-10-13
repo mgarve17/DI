@@ -1,0 +1,75 @@
+﻿<Window x:Class="practica1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practica1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="10">
+            <TextBlock Text="Reserva de entradas" FontSize="20" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+
+                <Label Content="Evento" HorizontalAlignment="Left"/>
+                <ComboBox x:Name="Entradas" Width="150" Margin="15,5,0,10" HorizontalAlignment="Right">
+                    <ComboBoxItem Content="Concierto"/>
+                    <ComboBoxItem Content="Festival"/>
+                    <ComboBoxItem Content="Teatro"/>
+                    <ComboBoxItem Content="Espectaculo"/>
+                </ComboBox>
+            </StackPanel>
+            <WrapPanel Orientation="Horizontal" Margin="10,0,0,10">
+                <Label Content="Fecha"/>
+                <DatePicker x:Name="Fecha" Width="150" Margin="15,0,10,10" HorizontalAlignment="Right"/>
+            </WrapPanel>
+            <WrapPanel>
+                <Label Content="Nº entradas"/>
+                <ComboBox x:Name="NumeroEntradas" Width="150" Margin="15,5,0,10" >
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+                    <ComboBoxItem Content="3"/>
+                    <ComboBoxItem Content="4"/>
+                    <ComboBoxItem Content="5"/>
+                </ComboBox>
+
+            </WrapPanel>
+
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10">
+           
+            <WrapPanel Orientation="Horizontal" Margin="0,45,0,10">
+                <Label Content="Tipo de entrada"/>
+               <RadioButton x:Name="Entrada1" Content="General" Margin="10,8,0,10"/>
+                <RadioButton x:Name="Entrada2" Content="Premium" Margin="10,8,0,10"/>
+                <RadioButton x:Name="Entrada3" Content="Reducida" Margin="10,8,0,10"/>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <Label Content="Servicios"/>
+                <CheckBox x:Name="Servicio1" Content="Aparcamiento" Margin="10,8,0,10"/>
+                <CheckBox x:Name="Servicio2" Content="Acceso Preferente" Margin="10,8,0,10"/>
+                <CheckBox x:Name="Servicio3" Content="seguro de cancelación" Margin="66,8,0,10"/>
+            </WrapPanel>
+            
+            <WrapPanel Orientation="Horizontal" Margin="0,100,0,10">
+                
+                <Button x:Name="Reservar" Content="Reservar" Width="100" Height="30" Margin="10,0,0,0"/>
+                <Button x:Name="Cancelar" Content="Cancelar" Width="100" Height="30" Margin="10,0,0,0"/>
+            </WrapPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
