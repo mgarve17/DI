@@ -6,7 +6,41 @@
         xmlns:local="clr-namespace:practica2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Archivo">
+                <MenuItem Header="Nuevo" Click="Nuevo_Click"/>
+                <MenuItem Header="Abrir" Click="Abrir_Click"/>
+                <MenuItem Header="Guardar" Click="Guardar_Click"/>
+                <Separator/>
+                <MenuItem Header="Salir" Click="Salir_Click"/>
+            </MenuItem>
+            <MenuItem Header="Tareas">
+                <MenuItem Header="Añadir tarea"/>
+                <MenuItem Header="Editar tarea"/>
+                <MenuItem Header="Eliminar tarea"/>
+            </MenuItem>
+            <MenuItem Header="Ayuda">
+                <MenuItem Header="Ver ayuda"/>
+                <MenuItem Header="Acerca de"/>
+            </MenuItem>
+        </Menu>
 
-    </Grid>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ListBox x:Name="TareasListBox" Grid.Column="0" Margin="5" SelectionChanged="TareasListBox_SelectionChanged"/>
+            
+            
+            <StackPanel Grid.Column="1" Margin="5">
+                <TextBlock Text="Detalles de la tarea:" FontWeight="Bold" Margin="0,0,0,5"/>
+                <TextBlock x:Name="DetallesTextBlock" TextWrapping="Wrap"/>
+            </StackPanel>
+        </Grid>
+        
+    </DockPanel>
+   
 </Window>
