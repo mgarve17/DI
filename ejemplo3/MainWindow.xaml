@@ -1,0 +1,71 @@
+﻿<Window x:Class="ejemplo3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ejemplo3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="15">
+    
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <TreeView Grid.Column="0" Name="treeView" Margin="5" SelectedItemChanged="TreeView_SelectedItemChanged">
+            <TreeViewItem Header="General" IsSelected="True">
+              
+            </TreeViewItem>
+            <TreeViewItem Header="Apariencia">
+                
+            </TreeViewItem>
+            <TreeViewItem Header="Sistema" IsExpanded="True">
+                <TreeViewItem Header="Rendimiento"/>
+                <TreeViewItem Header="Almacenamiento"/>
+                <TreeViewItem Header="Opciones avanzadas"/>
+            </TreeViewItem>
+        </TreeView>
+        
+        <TabControl Grid.Column="1" Name="tabControl" Margin="5" TabStripPlacement="Top">
+            <TabItem Header="General">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Configuración general"
+                               FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+                    <CheckBox Content="Iniciar aplicación automáticamente" Margin="0,0,0,10"/>
+                    <CheckBox Content="Habilitar notificaciones" Margin="0,0,0,10"/>
+                    <CheckBox Content="Permitir actualizaciones automáticas" Margin="0,0,0,10"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Apariencia">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Apariencia"
+                               FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+                    <TextBlock Text="Nivel de escala:" Margin="0,0,0,10"
+                               FontSize="10"/>
+
+                    <Slider Minimum="0" Maximum="100" Value="50" Width="250" HorizontalAlignment="Left" Orientation="Horizontal" 
+                            TickFrequency="5" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Margin="0,0,0,10"/>
+                    <TextBlock Text="Progreso:" Margin="0,0,0,10" FontSize="10"/>
+                    <ProgressBar Minimum="0" Maximum="100" Value="50" Width="250" Height="20" HorizontalAlignment="Left" 
+                                 IsIndeterminate="True" Margin="0,0,0,10"/>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="Sistema">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Contenido de la pestaña Sistema"
+                               FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+
+                    <Expander Header="Mostrar opciones avanzadas" IsExpanded="True" Margin="0,0,0,10">
+                        <StackPanel Margin="10">
+                            <TextBlock Text="Opciones de rendimiento"
+                                       FontSize="14" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <CheckBox Content="Optimizar para velocidad" Margin="0,0,0,10"/>
+                            <CheckBox Content="Optimizar para apariencia" Margin="0,0,0,10"/>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </TabItem>
+        </TabControl>   
+    </Grid>
+</Window>
