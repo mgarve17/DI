@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:practica2"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Recursos/Colores.xaml"/>
+                <ResourceDictionary Source="Recursos/Estilos.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

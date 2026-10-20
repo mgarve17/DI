@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+   
+    <SolidColorBrush x:Key="FondoPrincipal" Color="#EAF4F4"/>
+    <SolidColorBrush x:Key="TextoPrincipal" Color="#000000"/>
+    <SolidColorBrush x:Key="FondoBoton" Color="#cce3de"/>
+    <SolidColorBrush x:Key="Bordes" Color="#a4c3b2"/>
+    <SolidColorBrush x:Key="Secundario" Color="#BFD8D2"/>
+</ResourceDictionary>
