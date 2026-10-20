@@ -20,5 +20,10 @@ namespace practica2
         {
             InitializeComponent();
         }
+
+        private void PrioridadComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
