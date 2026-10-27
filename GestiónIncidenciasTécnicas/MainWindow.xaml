@@ -1,0 +1,81 @@
+﻿<Window x:Class="GestiónIncidenciasTécnicas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestiónIncidenciasTécnicas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center">
+            
+            <Label Content="Gestión de Incidencias Técnicas" FontSize="24" FontWeight="Bold" />
+        
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,10,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10">
+                <Label Content="Título:"/>
+                <Label Content="Categoría:"/>
+                <Label Content="Prioridad:"/>
+                <Label Content="Tiempo Estimado:"/>
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Margin="10">
+                <TextBox Name="txtTitulo" Width="180" />
+                <ComboBox Name="cmbCategoria" Width="180" Margin="10">
+                    <ComboBoxItem Content="Hardware"/>
+                    <ComboBoxItem Content="Software"/>
+                    <ComboBoxItem Content="Redes"/>
+                    <ComboBoxItem Content="Otros"/>
+                </ComboBox>
+                <WrapPanel>
+                    <RadioButton GroupName="prioridad" Content="Alta" Margin="3"/>
+                    <RadioButton GroupName="prioridad" Content="Media" Margin="3"/>
+                    <RadioButton GroupName="prioridad" Content="Baja" Margin="3"/>
+                </WrapPanel>
+                
+                <TextBox Name="txtTiempoEstimado" Width="180"/>
+            </StackPanel>
+           
+        </Grid>
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Button Name="btnAgregar" Content="Registrar Incidencia" Width="150" Margin="10"/>
+            <Button Name="btnGestionar" Content="Gestionar Incidencias" Width="150" Margin="10"/>
+            <Button Name="btnLimpiar" Content="Limpiar" Width="150" Margin="10"/>
+
+        </WrapPanel>
+        
+       <GroupBox Grid.Row="3" Header="Incidencias Registradas" Margin="10">
+            <ListView x:Name="lstIncidencias">
+
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Título" DisplayMemberBinding="{Binding titulo}" Width="150"/>
+                        <GridViewColumn Header="Categoría" DisplayMemberBinding="{Binding categoria}" Width="150"/>
+                        <GridViewColumn Header="Prioridad" DisplayMemberBinding="{Binding prioridad}" Width="150"/>
+                        <GridViewColumn Header="Tiempo Estimado" DisplayMemberBinding="{Binding TiempoEstimado}" Width="150"/>
+                        <GridViewColumn Header="Estado" DisplayMemberBinding="{Binding estado}" Width="150"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+
+
+    </Grid>
+</Window>
