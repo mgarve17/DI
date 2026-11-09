@@ -4,12 +4,12 @@ using System.Text;
 
 namespace GestiónIncidenciasTécnicas
 {
-    internal class Incidencia
+    public class Incidencia
     {
-        private string titulo { get; set; } = "";
-        private string categoria { get; set; } = "";
-        private String prioridad { get; set; } = "";
-        private int TiempoEstimado { get; set; } = 0;
-        private string estado { get; set; } = "PENDIENTE";
+        public string titulo { get; set; } = "";
+        public string categoria { get; set; } = "";
+        public String prioridad { get; set; } = "";
+        public int TiempoEstimado { get; set; } = 0;
+        public string estado { get; set; } = "PENDIENTE";
     }
 }
